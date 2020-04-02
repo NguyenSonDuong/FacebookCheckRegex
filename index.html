@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <script src="./js.js"></script>
+    <link rel="stylesheet" href="./bootrap.css"/>
+    <style>
+        ::selection{
+            background-color: brown;
+            color: #FFF;
+            border-radius: 5px;
+        }
+        body{
+            background-color: rgb(14, 14, 14);
+        }
+        .header{
+            color:  rgb(126, 13, 13);
+            text-align: center;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            margin-top: 20px;
+            margin-left: 0;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            margin-right: 0;
+        }
+        .form{
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 50px;
+        }
+        .form-content{
+            border-radius: 5px;
+            padding: 0;
+            background-color: rgb(39, 39, 39);
+        }
+        .btn-style{
+            background-color: rgb(5, 136, 197);
+            width: 100%;
+            border: none;
+            padding: 8px;
+            color: rgb(226, 226, 226);
+            border-radius: 5px;
+            text-align: center;
+        }
+        .btn-style:hover{
+            background-color: rgb(197, 5, 5);
+            outline: none;
+        }
+        #textLog{
+            background-color: rgb(14, 14, 14);
+            border: rgb(168, 0, 0);
+            color: rgb(24, 145, 0);
+            font-size: small;
+        }
+        #textLogRegex{
+            background-color: rgb(14, 14, 14);
+            border: rgb(168, 0, 0);
+            color: rgb(24, 145, 0);
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <div class="container form-content container-sm" >
+        <h4 class="container align-items-center header">Phần mềm lọc comment theo id</h4>
+        <form class="form" name="myForm">
+            <div class="form-group">
+                <label for="AccessToken" style="color: rgb(243, 243, 243);">Access Token:</label>
+                <input type="password" class="form-control" id="AccessToken" aria-describedby="AccesstokenHelp" style="outline: orange;">
+                <small style="color: rgb(243, 243, 243);" id="AccesstokenHelp" class="form-text text-muted">Token có dạng EAAAAxxxxx</small>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label style="color: rgb(243, 243, 243);" for="idGroup">ID của group</label>
+                    <input type="text" class="form-control" id="idGroup" autocomplete="off">
+                </div>
+                <div class="form-group col">
+                    <label style="color: rgb(243, 243, 243);" for="idGroup">ID của bài đăng</label>
+                    <input type="text" class="form-control" id="idGroup" autocomplete="off">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label style="color: rgb(243, 243, 243);" for="regex">Điều kiện muốn kiểm tra</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control col" id="dieuKien" placeholder="Điều kiện"  autocomplete="off" aria-describedby="regexHelp">
+                        <small style="color: rgb(243, 243, 243);" id="dieuKienHelp" class="form-text text-muted">Mỗi điều kiện tìm kiếm cách nhanh bới dấu <kbd style="background-color: #FFF;color: black;">|</kbd></small>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control col" id="regex" placeholder="Chuỗi regex"  autocomplete="off" aria-describedby="regexHelp">
+                        <small style="color: rgb(243, 243, 243);" id="regexHelp" class="form-text text-muted">Bạn có thể tìm hiểu về chuỗi này <a href="https://vi.wikipedia.org/wiki/Bi%E1%BB%83u_th%E1%BB%A9c_ch%C3%ADnh_quy" target="_blank">tại đây</a></small>
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+            <button class="btn-style" id="btnSend" type="button" ><b>KIỂM TRA</b></button>
+            <div class="form-group">
+                <label for="textLog" style="margin-top: 30px;color: rgb(243, 243, 243);"><b>Log: 🚀 Tìm thấy chuỗi trong bài post | ⛔ Không tìm thấy chuỗi trong bài post</b></label>
+                <textarea id="textLog" style="height: 300px;" class="form-control" ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="textLogRegex" style="margin-top: 30px;color: rgb(243, 243, 243);"><b>Log regex: 🚀 Tìm thấy chuỗi regex trong bài post | ⛔ Không tìm thấy chuỗi regex trong bài post</b></label>
+                <textarea id="textLogRegex" style="height: 300px;" class="form-control" ></textarea>
+            </div>
+            <script src="./js.js"></script>
+        </form>
+    </div>
+    
+
+</body>
+</html>
